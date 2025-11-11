@@ -52,7 +52,9 @@ Applicazione web in React per esplorare, curare e aggiornare una mappa collabora
 - **Build command**: `npm run build`
 - **Start command**: `npm run start`
 - Imposta l’`Environment` su `Node`, aggiungi la variabile `VITE_ADMIN_PASSWORD` con il valore desiderato e assicurati che la porta di pubblicazione sia `10000` (Render reindirizza automaticamente).
-- Se ospiti l’app su un dominio radice, imposta anche `VITE_BASE_PATH="/"` prima della build o come variabile d’ambiente.
+- La configurazione di default usa percorsi **relativi**, quindi funziona automaticamente anche su GitHub Pages o altri host in
+  sottocartelle.
+- Se ospiti l’app su un dominio radice, imposta `VITE_BASE_PATH="/"` prima della build o come variabile d’ambiente.
 
 ### GitHub Pages
 
@@ -60,12 +62,12 @@ Il repository include un workflow GitHub Actions (`Deploy to GitHub Pages`) che 
 
 1. Apri le impostazioni del repository su GitHub e, nella sezione **Pages**, seleziona come sorgente il branch `gh-pages` con cartella `/(root)`.
 2. Attendi il completamento del workflow: la prima esecuzione avviene subito dopo il push e richiede pochi minuti.
-3. L’URL pubblico sarà `https://<tuo-utente>.github.io/Trashcoli/`. Se vuoi ospitare il sito in un percorso diverso, sovrascrivi la variabile `VITE_BASE_PATH` nel workflow o nelle impostazioni del repository.
+3. L’URL pubblico sarà `https://<tuo-utente>.github.io/Trashcoli/`. Se vuoi ospitare il sito in un percorso diverso, imposta `VITE_BASE_PATH` con il percorso desiderato (es. `/mio-sottosito/`) prima della build.
 
 Per pubblicazioni manuali o su fork personali puoi comunque eseguire la build locale e distribuire la cartella `dist/`:
 
 ```bash
-VITE_BASE_PATH="/nome-repo" npm run build
+npm run build
 ```
 
 ## Struttura del progetto
