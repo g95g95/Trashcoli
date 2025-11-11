@@ -24,7 +24,7 @@ Applicazione web in React per esplorare, curare e aggiornare una mappa collabora
    VITE_ADMIN_PASSWORD="la-tua-password-segreta"
    ```
 
-   Senza configurazione, l’app utilizza il valore predefinito `trashcoli-admin`.
+   Senza configurazione, l’app utilizza il valore predefinito `Mellon`.
 
 3. Avvia l’ambiente di sviluppo:
 
@@ -49,12 +49,13 @@ Applicazione web in React per esplorare, curare e aggiornare una mappa collabora
 - **Build command**: `npm run build`
 - **Start command**: `npm run start`
 - Imposta l’`Environment` su `Node`, aggiungi la variabile `VITE_ADMIN_PASSWORD` con il valore desiderato e assicurati che la porta di pubblicazione sia `10000` (Render reindirizza automaticamente).
+- Se ospiti l’app su un dominio radice, imposta anche `VITE_BASE_PATH="/"` prima della build o come variabile d’ambiente.
 
 ### GitHub Pages
 
 L’app è completamente static e può essere pubblicata tramite GitHub Pages.
 
-1. Imposta, se necessario, una base personalizzata prima della build:
+1. La build di default utilizza `base="/Trashcoli/"`, adatta a GitHub Pages per questo repository. Se pubblichi altrove, imposta una base personalizzata prima della build:
 
    ```bash
    VITE_BASE_PATH="/nome-repo" npm run build

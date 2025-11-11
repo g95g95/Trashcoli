@@ -16,7 +16,7 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow
 });
 
-const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD ?? 'trashcoli-admin';
+const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD ?? 'Mellon';
 
 const createSlug = (value: string) =>
   value
