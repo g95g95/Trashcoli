@@ -53,15 +53,17 @@ Applicazione web in React per esplorare, curare e aggiornare una mappa collabora
 
 ### GitHub Pages
 
-L’app è completamente static e può essere pubblicata tramite GitHub Pages.
+Il repository include un workflow GitHub Actions (`Deploy to GitHub Pages`) che compila automaticamente il progetto e pubblica il risultato sul branch `gh-pages` a ogni push su `main`.
 
-1. La build di default utilizza `base="/Trashcoli/"`, adatta a GitHub Pages per questo repository. Se pubblichi altrove, imposta una base personalizzata prima della build:
+1. Apri le impostazioni del repository su GitHub e, nella sezione **Pages**, seleziona come sorgente il branch `gh-pages` con cartella `/(root)`.
+2. Attendi il completamento del workflow: la prima esecuzione avviene subito dopo il push e richiede pochi minuti.
+3. L’URL pubblico sarà `https://<tuo-utente>.github.io/Trashcoli/`. Se vuoi ospitare il sito in un percorso diverso, sovrascrivi la variabile `VITE_BASE_PATH` nel workflow o nelle impostazioni del repository.
 
-   ```bash
-   VITE_BASE_PATH="/nome-repo" npm run build
-   ```
+Per pubblicazioni manuali o su fork personali puoi comunque eseguire la build locale e distribuire la cartella `dist/`:
 
-2. Pubblica il contenuto della cartella `dist/` nel branch `gh-pages` (puoi usare [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages) oppure uno script basato su `gh-pages`).
+```bash
+VITE_BASE_PATH="/nome-repo" npm run build
+```
 
 ## Struttura del progetto
 
