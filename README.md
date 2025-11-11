@@ -34,6 +34,9 @@ Applicazione web in React per esplorare, curare e aggiornare una mappa collabora
 
    L’applicazione sarà disponibile all’indirizzo [`http://localhost:5173`](http://localhost:5173).
 
+   > 💡 Se vedi l’errore `vite is not recognized as an internal or external command`, assicurati di aver eseguito prima
+   > `npm install`: il comando installa Vite e rende disponibile lo script locale.
+
 4. Genera la build di produzione:
 
    ```bash
